@@ -1,0 +1,19 @@
+var build_dir   = exports.build_dir   = './dist',
+    asset_dir   = exports.asset_dir   = build_dir + '/public',
+
+    client_src  = exports.client_src  = './public',
+    server_src  = exports.server_src  = './server',
+
+    client_glob = exports.client_glob = client_src + '/**/*',
+    server_glob = exports.server_glob = server_src + '/**/*',
+
+    client_dest = exports.client_dest = asset_dir,
+    server_dest = exports.server_dest = build_dir + '/server',
+
+    style_src   = exports.style_src   = client_src + '/style/style.scss',
+    app_modules = exports.app_modules     = client_src + '/app/**/*module*.js',
+    app_controllers = exports.app_controllers     = client_src + '/app/**/*controller*.js',
+
+    js_dest = exports.js_dest = asset_dir + '/js',
+    css_dest = exports.css_dest = asset_dir + '/css',
+    vendor_dest = exports.vendor_dest = asset_dir + '/vendor'

@@ -1,0 +1,14 @@
+mongo:
+  image: mongo
+  command: mongod --smallfiles
+app:
+  image: code/nodevil
+  working_dir: /app
+  restart: on-failure:5
+  ports:
+    - 127.0.0.1:80:8080
+  command: npm run-script dev-start
+  volumes:
+    - build/dev/:/app
+  links:
+    - mongo

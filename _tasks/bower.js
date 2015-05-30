@@ -18,11 +18,8 @@
       .pipe(gulpif('*.css', rename({ dirname: 'css' })))
       .pipe(rev())
       .pipe(gulp.dest(config.bower.dest))
-      .pipe(rev.manifest({
-        base: './',
-        merge: true
-       }))
-      .pipe(gulp.dest(config.build_dir))
+      .pipe(rev.manifest(config.build_dir + '/manifest.json', { merge: true }))
+      .pipe(gulp.dest(''))
   }
 
   function watch() {

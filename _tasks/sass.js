@@ -3,6 +3,7 @@
 
   var gulp = require('gulp'),
       sass = require('gulp-sass'),
+      rename = require('gulp-rename'),
       rev = require('gulp-rev'),
       config = require('../gulp.config.js')
 
@@ -15,8 +16,11 @@
         .on('error', sass.logError)
     gulp.src(config.sass.src)
       .pipe(sass_stream)
+      .pipe(rename( { dirname: 'css' }))
       .pipe(rev())
       .pipe(gulp.dest(config.sass.dest))
+      .pipe(rev.manifest(config.build_dir + '/manifest.json', { merge: true }))
+      .pipe(gulp.dest(''))
   }
 
   function watch() {

@@ -1,7 +1,7 @@
 (function() {
 
   module.exports = homepageController
-  var manifest = require('../../rev-manifest.json')
+  var manifest = require('../../manifest.json')
 
   function homepageController(app) {
     app.get('/', function(req, res) {

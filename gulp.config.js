@@ -26,13 +26,13 @@
           path.join(client_dir,'**', '*.module.js'),
           path.join(client_dir,'**', '*.controller.js')
         ],
-        dest: path.join(base, 'assets', 'js'),
+        dest: path.join(base, 'assets'),
         filename: 'client.js'
       },
       sass: {
         dir: path.join(assets_dir,'sass'),
         src: path.join(assets_dir,'sass','**', '*.scss'),
-        dest: path.join(base,'assets', 'css'),
+        dest: path.join(base,'assets'),
         opts: {
           style: 'expanded',
           includePaths: ['bower_components/foundation/scss']

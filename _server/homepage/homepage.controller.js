@@ -1,12 +1,10 @@
 (function() {
 
-  module.exports = homepageController
-  var manifest = require('../../manifest.json')
+  var express = require('express'),
+      router = module.exports = express.Router()
 
-  function homepageController(app) {
-    app.get('/', function(req, res) {
-      res.render('homepage.jade');
-    })
-  }
+  router.get('/', function(req, res) {
+    res.render('homepage.jade');
+  })
 
 })();

@@ -15,8 +15,8 @@ app.locals.asset_path = require('./helpers/asset_path')
 require('./db')
 
 // Initialize Features
-require('./posts')(app)
-require('./homepage')(app)
+require('./features/posts')(app)
+require('./features/homepage')(app)
 
 // Start Server
 var server = app.listen(config.port)

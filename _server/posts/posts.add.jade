@@ -1,0 +1,35 @@
+extends /layouts/main
+
+block body
+  body(ng-controller='PageController as page')
+
+block content
+  .row
+    .large-12.columns
+
+      .nav-bar.right
+        ul.button-group
+          li #[a.button(href='#') Link 1]
+          li #[a.button(href='#') Link 2]
+          li #[a.button(href='#') Link 3]
+          li #[a.button(href='#') Link 4]
+
+      h1 Blog
+        small This is my blog. It's awesome.
+
+  .row
+    .large-9.columns(role='content')
+      label Post Title
+        input(type='text', placeholder='Title')
+
+    aside.large-3.columns
+      h5 Categories
+        ul.side-nav
+          li #[a(href='#') News]
+          li #[a(href='#') Code]
+          li #[a(href='#') Design]
+          li #[a(href='#') Fun]
+
+        .panel
+          h5 Featured
+            p Featured Sample Text

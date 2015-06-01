@@ -2,6 +2,7 @@
   "use strict";
 
   var gulp = require('gulp'),
+      log = require('gulp-util').log,
       run = require('gulp-run'),
       config = require('../gulp.config.js')
 
@@ -9,7 +10,7 @@
 
   function main() {
     var compose_file = config.is_dev ? 'fig.dev.yml' : 'fig.yml'
-    run('docker-compose -f ' + compose_file + ' up').exec()
+    return run('docker-compose up', { cwd: process.cwd() }).exec('-f ' + compose_file)
   }
 
 })();

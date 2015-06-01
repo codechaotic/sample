@@ -11,7 +11,7 @@
   gulp.task('sass.watch', ['sass'], watch)
 
   function main() {
-    gulp.src(config.sass.src)
+    return gulp.src(config.sass.src)
       .pipe(sass(config.sass.opts)
         .on('error', sass.logError))
       .pipe(rename( { dirname: 'css' }))

@@ -9,7 +9,7 @@
   gulp.task('modules.watch', ['modules'], watch)
 
   function main() {
-    gulp.src(config.modules.src)
+    return gulp.src(config.modules.src)
       .pipe(gulp.dest(config.modules.dest))
       .pipe(install({production: true}))
   }

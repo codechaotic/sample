@@ -8,7 +8,7 @@
   gulp.task('server.watch', ['server'], watch)
 
   function main() {
-    gulp.src(config.server.src, { base: config.server_dir })
+    return gulp.src(config.server.src, { base: config.server_dir })
       .pipe(gulp.dest(config.server.dest))
   }
 

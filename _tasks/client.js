@@ -12,7 +12,7 @@
   gulp.task('client.watch', ['client'], watch)
 
   function main() {
-    gulp.src(config.client.src)
+    return gulp.src(config.client.src)
       .pipe(ng_annotate({ add: true, single_quotes: true }))
       .pipe(concat(config.client.filename))
       .pipe(rename({ dirname: 'js' }))

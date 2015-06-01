@@ -12,8 +12,8 @@
 
   function main() {
     return gulp.src(config.sass.src)
-      .pipe(sass(config.sass.opts)
-        .on('error', sass.logError))
+      .pipe(sass(config.sass.opts))
+        .on('error', sass.logError)
       .pipe(rename( { dirname: 'css' }))
       .pipe(rev())
       .pipe(gulp.dest(config.sass.dest))

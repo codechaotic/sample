@@ -12,7 +12,7 @@
   gulp.task('bower.watch', ['bower'], watch)
 
   function main() {
-    return gulp.src(bower_files({ filter: /.*.(js|css)$/ }), { base: '../'})
+    return gulp.src(bower_files({ filter: /.*.(js|css)$/ }),{ base: '.' })
       .pipe(gulpif('*.js', rename({ dirname: 'js' })))
       .pipe(gulpif('*.css', rename({ dirname: 'css' })))
       .pipe(rev())

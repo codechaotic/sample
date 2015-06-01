@@ -9,8 +9,8 @@
   gulp.task('run', ['build'], main)
 
   function main() {
-    var compose_file = config.is_dev ? 'fig.dev.yml' : 'fig.yml'
-    return run('docker-compose up', { cwd: process.cwd() }).exec('-f ' + compose_file)
+    var file = config.is_dev ? 'docker-compose.dev.yml' : 'docker-compose.yml'
+    return run('docker-compose up', { cwd: process.cwd() }).exec('-f ' + file)
   }
 
 })();

@@ -5,7 +5,7 @@
 
   function homepageController(app) {
     app.get('/', function(req, res) {
-      res.render('homepage.view.jade', { assets: manifest });
+      res.render('homepage.jade');
     })
   }
 

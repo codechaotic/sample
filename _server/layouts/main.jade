@@ -13,8 +13,8 @@ html(lang='en', ng-app='app')
     title Default Title
 
   block pre
-    link(href=assets['css/style.css'], rel='stylesheet')
-    script(src=assets['js/modernizr.js'])
+    link(href=asset_path('css/style.css'), rel='stylesheet')
+    script(src=asset_path('js/modernizr.js'))
 
   block body
   body
@@ -23,8 +23,8 @@ html(lang='en', ng-app='app')
     Default Content
 
   block post
-    script(src=assets['js/angular.js'])
-    script(src=assets['js/jquery.js'])
-    script(src=assets['js/foundation.js'])
-    script(src=assets['js/fastclick.js'])
-    script(src=assets['js/client.js'])
+    script(src=asset_path('js/angular.js'))
+    script(src=asset_path('js/jquery.js'))
+    script(src=asset_path('js/foundation.js'))
+    script(src=asset_path('js/fastclick.js'))
+    script(src=asset_path('js/client.js'))

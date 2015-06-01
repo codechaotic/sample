@@ -13,6 +13,8 @@ app.locals.basedir = __dirname
 
 require('./sections/sections.controller')(app)
 require('./homepage/homepage.controller')(app)
+// Load Helper Methods
+app.locals.asset_path = require('./helpers/asset_path')
 
 // Start Server
 var server = app.listen(config.port)

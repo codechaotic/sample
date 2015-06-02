@@ -1,0 +1,10 @@
+extends /layouts/main
+
+block body
+  body(ng-controller='BlogController as blog')
+
+block content
+  .row(ng-repeat='post in blog.posts')
+    .large-4.columns {{post.title}}
+    .large-4.columns {{post.content}}
+    .large-4.columns {{post.featured}}

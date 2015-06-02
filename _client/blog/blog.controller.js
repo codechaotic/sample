@@ -2,19 +2,19 @@
   'use strict';
 
   angular
-    .module('app.page')
-    .controller('PageController',Page);
+    .module('app.blog')
+    .controller('BlogController',Blog);
 
   /* @ngInject */
-  function Page($http) {
+  function Blog($http) {
     var vm = this;
-    vm.sections = [];
+    vm.posts = [];
     activate();
 
     function activate() {
-      return $http.get('/api/sections')
+      return $http.get('/api/posts')
         .success(function(data) {
-          vm.sections = data;
+          vm.posts = data;
         });
     }
   }

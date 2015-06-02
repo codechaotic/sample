@@ -12,8 +12,8 @@
 
   exports.getAll = getAll
 
-  function getAll() {
-    return post.find({ }).exec()
+  function getAll(cb) {
+    return post.find().exec(cb)
   }
 
 })();

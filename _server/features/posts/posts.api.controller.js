@@ -6,16 +6,15 @@
       posts = require('./posts.model.js')
 
   router.get('/', function(req, res) {
-    posts.getAll()
-      .onResolve(function (err, data) {
-        if (err) console.error(err)
-        res.send(data)
-      })
+    posts.getAll(function(err,doc) {
+      if(err) throw err
+      res.json(doc)
+    })
+
   })
 
   router.post('/add', function(req, res) {
-    console.log(req.body);
-    res.json(req.body);
+
   })
 
 })();

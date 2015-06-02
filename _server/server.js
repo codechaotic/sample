@@ -4,8 +4,12 @@ var express = require('express'),
 
 app.set('views', [])
 app.set('view engine', 'jade')
+
+// Inject Middleware
+app.use(require('body-parser').json())
 app.use(express.static('assets'))
-app.use(express.bodyParser())
+
+
 app.locals.basedir = __dirname
 
 // Load Helper Methods

@@ -5,11 +5,11 @@
       router = module.exports = express.Router()
 
   router.get('/', function (req, res) {
-    res.render('posts.jade');
+    res.render('index.jade');
   })
-  
-  router.get('/add', function (req, res) {
-    res.render('posts.add.jade');
+
+  router.get('/blog', function (req, res) {
+    res.render('blog.jade');
   })
 
 })();

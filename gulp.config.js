@@ -2,50 +2,43 @@
   "use strict";
 
   var argv = require('yargs').argv,
-      path = require('path')
+      build_dir =  argv.dev ? 'build/dev' : 'build/dist',
+      source_dir = '_app',
+      asset_path = '/public'
 
-  var base =  argv.dev ? 'build/dev' : 'build/dist',
-      assets_dir = '_assets',
-      client_dir = '_client',
-      server_dir = '_server'
-
-  module.exports = config()
-
-  function config() {
-    return {
-      is_dev: argv.dev || false,
-      build_dir: base,
-      server: {
-        dir: server_dir,
-        src: path.join(server_dir,'**','*'),
-        dest: path.join(base,'server')
-      },
-      client: {
-        dir: client_dir,
-        src: [
-          path.join(client_dir,'**', '*.module.js'),
-          path.join(client_dir,'**', '*.controller.js')
-        ],
-        dest: path.join(base, 'assets'),
-        filename: 'client.js'
-      },
-      sass: {
-        dir: path.join(assets_dir,'sass'),
-        src: path.join(assets_dir,'sass','**', '*.scss'),
-        dest: path.join(base,'assets'),
-        opts: {
-          style: 'expanded',
-          includePaths: ['bower_components/foundation/scss']
-        }
-      },
-      bower: {
-        src: 'bower.json',
-        dest: path.join(base, 'assets' )
-      },
-      modules:{
-        src: 'package.json',
-        dest: base
+  module.exports = {
+    source_dir: source_dir,
+    build: {
+      src: [
+        source_dir + '/**/*',
+        '!' + source_dir + asset_path,
+        '!' + source_dir + asset_path + '/**/*',
+        '!' + source_dir + '/bower_components',
+        '!' + source_dir + '/bower_components/**/*'
+      ],
+      dest: build_dir
+    },
+    install: {
+      bowerJson: source_dir + '/bower.json',
+      packageJson: source_dir + '/package.json'
+    },
+    asset: {
+      src: source_dir + asset_path,
+      dest: build_dir + asset_path
+    },
+    sass: {
+      src: source_dir + asset_path + '/sass/style.scss',
+      opts: {
+        style: 'expanded',
+        includePaths: ['_app/bower_components/foundation/scss']
       }
+    },
+    client: {
+      src: [
+        source_dir + asset_path + '/client/**/*.modules.js',
+        source_dir + asset_path + '/client/**/*.controller.js'
+      ],
+      dest: 'client.js'
     }
   }
 

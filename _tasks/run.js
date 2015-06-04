@@ -2,7 +2,6 @@
   "use strict";
 
   var gulp = require('gulp'),
-      log = require('gulp-util').log,
       run = require('gulp-run'),
       config = require('../gulp.config.js')
 

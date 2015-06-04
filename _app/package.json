@@ -4,8 +4,8 @@
   "description": "A sample web application",
   "author": "codechaotic <thinkinfractals@gmail.com>",
   "scripts": {
-    "start": "node server/server.js",
-    "dev-start": "nodemon server/server.js"
+    "start": "node app.js",
+    "dev-start": "nodemon app.js"
   },
   "dependencies": {
     "body-parser": "^1.12.4",

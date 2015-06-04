@@ -11,7 +11,7 @@
       .on('connected', onConnected)
       .on('error', onError)
       .on('disconnected', onDisconnected)
-    mongoose.connect(config.mongo_url, cb)
+    mongoose.connect(config.mongo_url,cb)
   }
 
   function onConnected() {

@@ -1,13 +1,17 @@
 (function() {
   "use strict";
 
-  var gulp = require('gulp')
+  var gulp = require('gulp'),
+      config = require('../gulp.config.js')
+
   gulp.task('build', [
-    'sass',
-    'client',
-    'server',
-    'bower',
-    'modules'
-  ])
+    'install.npm',
+    'install.bower',
+    'assets' ], build)
+
+  function build() {
+    return gulp.src(config.build.src)
+      .pipe(gulp.dest(config.build.dest))
+  }
 
 })();

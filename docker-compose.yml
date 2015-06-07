@@ -2,12 +2,12 @@ mongo:
   image: mongo
   command: mongod --smallfiles
 app:
-  image: code/node
+  image: code/nodevil
   working_dir: /app
   restart: on-failure:5
   ports:
     - 127.0.0.1:80:8080
-  command: npm start
+  command: npm run-script forever
   volumes:
     - build/dist/:/app
   links:

@@ -5,7 +5,7 @@
   "author": "codechaotic <thinkinfractals@gmail.com>",
   "scripts": {
     "start": "node app.js",
-    "dev-start": "nodemon app.js"
+    "forever": "nodemon app.js"
   },
   "dependencies": {
     "body-parser": "^1.12.4",

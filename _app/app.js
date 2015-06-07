@@ -6,7 +6,6 @@ var express = require('express'),
 app.set('views', __dirname + "/views")
 app.set('view engine', 'jade')
 app.locals.basedir = app.get('views')
-app.locals.asset_path = require('./helpers/asset_path')
 
 app.use(require('body-parser').json())
 

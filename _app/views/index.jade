@@ -4,8 +4,7 @@ block body
   body(ng-controller='PageController as page')
 
 block content
-  form(name='addPost')
+  form(name='create_post',method='post',action='/api/post/create')
     label Post Title
       input(type='text', placeholder='Title')
-    label Submit
-      input(type='submit', value='Submit')
+    input(type='submit', value='Submit')

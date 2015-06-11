@@ -5,7 +5,8 @@ require('require-dir')('./_tasks',{recurse: true});
 
   var gulp = require('gulp')
   gulp.task('default', [
-    'build',
+    'install',
+    'build'
   ])
 
 })();

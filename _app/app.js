@@ -13,7 +13,6 @@ app.use(express.static('public'))
 app.use('/',require('./app.router'))
 app.use('/api',require('./api/api.router'))
 
-db.init( function (err) {
-  if (err) throw err
+db.connect( config.mongo_url, function () {
   app.listen(config.port)
 })

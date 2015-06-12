@@ -8,10 +8,10 @@
   /* @ngInject */
   function Post() {
     var vm = this
-    vm posts = []
+    vm.posts = []
 
     this.save = function(post) {
-
+      vm.posts.push(angular.copy(post))
     }
   }
 

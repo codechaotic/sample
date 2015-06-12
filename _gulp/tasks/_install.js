@@ -6,6 +6,6 @@
   gulp.task('install', [
     'install.bower',
     'install.npm'
-  ])
+  ] )
 
 })();

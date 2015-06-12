@@ -12,8 +12,10 @@
     "gulp-rev": "^4.0.0",
     "gulp-rev-collector": "^1.0.0",
     "gulp-sass": "^2.0.1",
+    "gulp-util": "^3.0.5",
     "main-bower-files": "^2.7.1",
     "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.0",
     "vinyl-source-stream": "^1.1.0",
     "yargs": "^3.9.0"
   },

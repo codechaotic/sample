@@ -1,8 +1,9 @@
 extends /layouts/main
 
 block content
-  div(ng-controller='PostController as postCtrl')
-  form.create-post(novalidate)
-    label Title:
-      input(type='text',ng-model='post.title')
-    input(type='submit',ng-click='postCtrl.save(post)',value='Save')
+  div(ng-controller="PostController as postCtrl")
+    form.create-post(novalidate)
+      input(type="text",ng-model="post.title")
+      input(type="submit",ng-click="postCtrl.save(post)",value="Save")
+    pre post = {{post | json}}
+    pre post = {{postCtrl.posts | json}}

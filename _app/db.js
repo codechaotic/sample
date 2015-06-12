@@ -1,29 +1,38 @@
 (function() {
 
   var mongoose = require('mongoose'),
-      exports = module.exports = { },
-      config = require('./config')
+      exports = module.exports = { }
 
-  exports.init = init
+  exports.connect = connect
 
-  function init(cb) {
+  function connect(mongo_url,cb) {
     mongoose.connection
       .on('connected', onConnected)
       .on('error', onError)
       .on('disconnected', onDisconnected)
-    mongoose.connect(config.mongo_url,cb)
-  }
 
-  function onConnected() {
-    console.log('Mongoose default connection open to ' + config.mongo_url)
-  }
+    function connectWithRetry() {
+      return mongoose.connect(mongo_url, function(err) {
+        if (err) {
+          console.error('Failed to connect to mongo on startup - retrying in 5 sec', err);
+          setTimeout(connectWithRetry, 5000);
+        }
+        else cb()
+      })
+    }
+    connectWithRetry()
 
-  function onError(err) {
-    console.log('Mongoose default connection error: ' + err)
-  }
+    function onConnected() {
+      console.log('Mongoose default connection open to ' + mongo_url)
+    }
 
-  function onDisconnected() {
-    console.log('Mongoose default connection disconnected')
+    function onError(err) {
+      console.log('Mongoose default connection error: ' + err)
+    }
+
+    function onDisconnected() {
+      console.log('Mongoose default connection disconnected')
+    }
   }
 
 })();

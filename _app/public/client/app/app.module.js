@@ -2,7 +2,8 @@
   'use strict';
 
   angular.module('app', [
-    'app.blog'
+    'app.blog',
+    'app.post'
   ]);
 
 })();

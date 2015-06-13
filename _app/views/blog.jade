@@ -1,9 +1,17 @@
 extends /layouts/main
 
+block title
+  title Your Blog
+
+block header
+  h1 Blog
+
 block content
   div(ng-controller="PostController as postCtrl")
+    h3 Posts
     form.create-post(novalidate)
       input(type="text",ng-model="post.title")
       input(type="submit",ng-click="postCtrl.save(post)",value="Save")
+
     pre post = {{post | json}}
-    pre post = {{postCtrl.posts | json}}
+    pre master = {{postCtrl.posts | json}}

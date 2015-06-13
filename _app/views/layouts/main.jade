@@ -1,54 +1,30 @@
 doctype html
 html(lang='en', ng-app='app')
-
-  block head
   head
-
   block meta
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-
   block title
-    title Default Title
-
+    title [Title]
   block pre
     link(href='css/theme.css', rel='stylesheet')
     script(src='js/modernizr.js')
 
-  block body
   body
     .row
       .large-12.columns
-
         .nav-bar.right
           ul.button-group
-            li #[a.button(href='#') Link 1]
-            li #[a.button(href='#') Link 2]
-            li #[a.button(href='#') Link 3]
-            li #[a.button(href='#') Link 4]
-
-        h1 Blog
-          small This is my blog. It's awesome.
+            li #[a.button(href='/') Home]
+            li #[a.button(href='/blog') Blog]
+        block header
+          h1 [Header]
 
     .row
-      .large-9.columns(role='content')
-
+      .large-8.large-offset-2.columns(role='content')
         block content
-          Default Content
-
-      aside.large-3.columns
-        block aside
-          h5 Categories
-            ul.side-nav
-              li #[a(href='#') News]
-              li #[a(href='#') Code]
-              li #[a(href='#') Design]
-              li #[a(href='#') Fun]
-
-            .panel
-              h5 Featured
-                p Featured Sample Text
+          [Content]
 
   block post
     script(src='js/angular.js')

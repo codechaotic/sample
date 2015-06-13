@@ -7,4 +7,6 @@
 
   exports.port = process.env.PORT || 8080
 
+  exports.asset_dir = 'public/'
+
 })();

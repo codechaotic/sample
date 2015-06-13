@@ -3,15 +3,10 @@ var express = require('express'),
     db = require('./db'),
     config = require('./config')
 
-app.set('views', __dirname + "/views")
-app.set('view engine', 'jade')
-app.locals.basedir = app.get('views')
-
 app.use(require('body-parser').json())
 
-app.use(express.static('public'))
-app.use('/',require('./app.router'))
-app.use('/api',require('./api/api.router'))
+app.use(express.static(config.asset_dir))
+app.use( '/api', require('./router' ))
 
 db.connect( config.mongo_url, function () {
   app.listen(config.port)

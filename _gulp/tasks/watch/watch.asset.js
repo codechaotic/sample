@@ -3,9 +3,7 @@
 
   var gulp = require('gulp')
 
-  gulp.task('watch.asset', [
-    'asset',
-  ], main)
+  gulp.task('watch.asset', main)
 
   function main() {
     gulp.watch( config.asset.client.watch, ['asset.client'] )

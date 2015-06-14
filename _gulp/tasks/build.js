@@ -1,14 +1,15 @@
-
-
 (function() {
   "use strict";
 
   var gulp = require('gulp')
 
   gulp.task('build', [
-    'install',
-    'asset',
-    'app'
+    'theme',
+    'vend',
+    'client',
+    'app',
+    'npm',
+    'page'
   ])
 
 })();

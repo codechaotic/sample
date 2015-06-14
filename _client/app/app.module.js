@@ -2,8 +2,8 @@
   'use strict';
 
   angular.module('app', [
-    'app.blog',
-    'app.post'
+    'ngRoute',
+    'app.page'
   ]);
 
 })();

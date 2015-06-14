@@ -5,6 +5,7 @@ var express = require('express'),
 
 app.use(require('body-parser').json())
 
+
 app.use(express.static(config.asset_dir))
 app.use( '/api', require('./router' ))
 

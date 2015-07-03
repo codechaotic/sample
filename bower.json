@@ -27,5 +27,8 @@
     "modernizr": {
       "main": "modernizr.js"
     }
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.1"
   }
 }

@@ -1,7 +1,8 @@
 (function() {
   "use strict";
 
-  var gulp = require('gulp')
+  var gulp = require('gulp'),
+      logger = require('./tools/logger')
 
   gulp.task('app', app)
   gulp.task('watch-app', ['app'], watchApp)
@@ -19,8 +20,8 @@
   function watchApp() {
     var src = config.app.src + '**/*'
     gulp.watch( src, ['app'] )
-      .on('change', helpers.changeHandler('app file'))
-      .on('change', helpers.dockerCompose.restart)
+      .on('change', logger('app file'))
+      .on('change', lib.application.restart)
   }
 
 })();

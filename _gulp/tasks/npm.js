@@ -2,7 +2,8 @@
   "use strict";
 
   var gulp = require('gulp'),
-      install = require('gulp-install')
+      install = require('gulp-install'),
+      logger = require('./tools/logger')
 
   gulp.task('npm', npm)
   gulp.task('watch-npm', ['npm'], watchNpm)
@@ -15,6 +16,6 @@
 
   function watchNpm() {
     gulp.watch( './package.json', ['npm'] )
-      .on('change', helpers.changeHandler('config file'))
+      .on('change', logger('config file'))
   }
 })();

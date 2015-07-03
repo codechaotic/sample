@@ -1,13 +1,13 @@
 mongo:
   image: mongo
-  command: mongod --smallfiles
+  command: ['mongod', '--smallfiles']
 app:
   image: codechaotic/node
   working_dir: /app
+  command: app.js
   restart: on-failure:5
   ports:
     - 127.0.0.1:80:8080
-  command: npm start
   volumes:
     - dist/:/app
   links:

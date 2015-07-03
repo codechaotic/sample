@@ -1,7 +1,5 @@
-var require_dir = require('require-dir'),
-    gulp_path = './_gulp/'
+var require_dir = require('require-dir')
 
-global.config = require(gulp_path + 'gulp.config')
-global.helpers = require_dir(gulp_path + 'helpers/')
+global.config = require('./gulp.config')
 
-require_dir(gulp_path + 'tasks/',{recurse: true});
+require_dir('./_gulp/tasks/')

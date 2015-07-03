@@ -6,9 +6,9 @@
       src_dir = '_src/',
       build_dir = 'dist/',
       temp_dir = 'tmp/'
-
+      
   module.exports = {
-    root_dir: __dirname + '/',
+    root_dir: path.join(__dirname,'../'),
     manifest: temp_dir + 'manifest.json',
     build_dir: build_dir,
     asset_dir: build_dir + 'public/',

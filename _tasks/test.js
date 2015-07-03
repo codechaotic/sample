@@ -14,7 +14,7 @@
 
   function unit(done) {
     karma.start({
-      configFile: config.root_dir + 'karma.conf.js',
+      configFile: config.root_dir + '_config/karma.conf.js',
       singleRun: true
     }, done)
   }
@@ -25,7 +25,7 @@
       .then(function() {
         gulp.src(['./_test/client/e2e/**/*.js'])
           .pipe(protractor({
-              configFile: config.root_dir + 'protractor.conf.js',
+              configFile: config.root_dir + '_config/protractor.conf.js',
               args: ['--baseUrl', 'http://127.0.0.1']
           }))
           .on('end', function() {

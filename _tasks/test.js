@@ -25,8 +25,7 @@
       .then(function() {
         gulp.src(['./_test/client/e2e/**/*.js'])
           .pipe(protractor({
-              configFile: config.root_dir + '_config/protractor.conf.js',
-              args: ['--baseUrl', 'http://127.0.0.1']
+              configFile: config.root_dir + '_config/protractor.conf.js'
           }))
           .on('end', function() {
             lib.selenium.stop()

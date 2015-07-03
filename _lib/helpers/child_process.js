@@ -9,11 +9,7 @@
     //console.log('SPAWN %s %s',cmd.split('/').pop(),args.join(' ') )
     var started_process = Q.defer(),
         stopped_process = Q.defer(),
-        options = {
-          cwd: process.cwd(),
-          detached: true,
-          stdio: 'pipe'
-        },
+        options = { cwd: process.cwd(), detached: true },
         output = [],
         child_process = spawn(cmd, args, options)
           .on('error', function(err) {
@@ -23,12 +19,15 @@
           .on('exit', function(code,signal) {
             stopped_process.resolve(output)
           })
-        started_process.resolve()
-        es.merge( child_process.stdout, child_process.stderr )
-          .pipe(es.split())
-          .on('data', function(chunk) {
-            if(chunk.length > 0) output.push(chunk)
-          })
+
+    started_process.resolve()
+
+    es.merge( child_process.stdout, child_process.stderr )
+      .pipe(es.split())
+      .on('data', function(chunk) {
+        if(chunk.length > 0) output.push(chunk)
+      })
+
     return {
       started: function() {
         return started_process.promise
